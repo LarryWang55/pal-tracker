@@ -26,9 +26,6 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         storeTimeEntry.setUserId(timeEntry.getUserId());
         timeEntryHashMap.put(storeTimeEntry.getId(), storeTimeEntry);
 
-//        TimeEntry var = timeEntryHashMap.get(storeTimeEntry.getId());
-//        System.out.println("timeEntryHashMap - " + var);
-
         return storeTimeEntry;
     }
 
