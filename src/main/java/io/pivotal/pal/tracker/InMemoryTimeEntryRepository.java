@@ -12,14 +12,13 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
 
     HashMap<Long, TimeEntry> timeEntryHashMap = new HashMap<Long, TimeEntry>();
-    long mapIndex = 0;
 
     public TimeEntry create(TimeEntry timeEntry) {
 
         TimeEntry storeTimeEntry = new TimeEntry();
 
-        mapIndex ++;
-        storeTimeEntry.setId(mapIndex);
+        long id = timeEntryHashMap.size() + 1;
+        storeTimeEntry.setId(id);
         storeTimeEntry.setDate(timeEntry.getDate());
         storeTimeEntry.setHours(timeEntry.getHours());
         storeTimeEntry.setProjectId(timeEntry.getProjectId());
